@@ -10,7 +10,14 @@ class Format{
         $text = substr($text, 0, strripos($text, ' '));
         $text = $text."......";
         return $text;
+    }
 
+    public function validation($data){
+        $data = trim($data);
+        $data = stripcslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 }
+
 ?>

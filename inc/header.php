@@ -48,7 +48,7 @@ $(window).load(function() {
 			<div class="logo">
 				<img src="images/logo.png" alt="Logo"/>
 				<h2>Zaman Web Developer</h2>
-				<p>Our website description</p>
+				<p>I Learned HTML. CSS, JavaScript, Bootstrap, PHP, Object Oriented PHP, Laravel PHP Framework</p>
 			</div>
 		</a>
 		<div class="social clear">
@@ -59,8 +59,8 @@ $(window).load(function() {
 				<a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
 			</div>
 			<div class="searchbtn clear">
-			<form action="" method="post">
-				<input type="text" name="keyword" placeholder="Search keyword..."/>
+			<form action="search.php" method="get">
+				<input type="text" name="search" placeholder="Search keyword..."/>
 				<input type="submit" name="submit" value="Search"/>
 			</form>
 			</div>
