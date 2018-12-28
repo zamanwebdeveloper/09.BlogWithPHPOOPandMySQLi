@@ -1,10 +1,10 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebarAdmin.php';?>
 
         <div class="grid_10">
 		
             <div class="box round first grid">
-                <h2>Add New Category</h2>
+                <h2>Update Category</h2>
                <div class="block copyblock"> 
                 <?php
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -14,8 +14,8 @@
                             echo "<span class='error'>Field must not be empty!!!</span>";
                         }
                         else{
-                            $query = "INSERT INTO tbl_category(name) VALUES('$addCatName')";
-                            $catInsert = $db->insert($query);
+                            $query = "";
+                            $catInsert = $db->update($query);
                             if ($catInsert) {
                                 echo "<span class='success'>Category inserted successfully</span>";
                             }else{
