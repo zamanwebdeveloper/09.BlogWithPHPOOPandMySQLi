@@ -1,5 +1,13 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebarAdmin.php';?>
+<?php
+    if (!isset($_GET['catid']) || $_GET['catid'] == NULL) {
+        echo "<script>window.location = 'catlist.php';</script>";
+        //header("Location:catlist.php");
+    }else{
+        $id = $_GET['catid'];
+    }
+?>
 
         <div class="grid_10">
 		
@@ -14,21 +22,26 @@
                             echo "<span class='error'>Field must not be empty!!!</span>";
                         }
                         else{
-                            $query = "";
-                            $catInsert = $db->update($query);
-                            if ($catInsert) {
-                                echo "<span class='success'>Category inserted successfully</span>";
+                            $query = "UPDATE tbl_category SET name = '$addCatName' WHERE id='$id'";
+                            $updated_row = $db->update($query);
+                            if ($updated_row) {
+                                echo "<span class='success'>Category Updated successfully</span>";
                             }else{
-                                echo "<span class='error'>Category not inserted successfully</span>";
+                                echo "<span class='error'>Category not Updated successfully</span>";
                             }
                         }
                     }
+                ?>
+                <?php
+                    $query = "SELECT * FROM tbl_category WHERE id='$id' order by id desc";
+                    $Category = $db->select($query);
+                    while ($result = $Category->fetch_assoc()) {                    
                 ?>
                  <form action="" method="post">
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="name" placeholder="Enter Category Name..." class="medium" />
+                                <input type="text" name="name" value="<?php echo $result['name'];?>" class="medium" />
                             </td>
                         </tr>
 						<tr> 
@@ -38,6 +51,8 @@
                         </tr>
                     </table>
                     </form>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>

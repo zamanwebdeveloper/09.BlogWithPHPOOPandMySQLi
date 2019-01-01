@@ -1,10 +1,17 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebarAdmin.php';?>
+<?php
+    if (!isset($_GET['editPostId']) || $_GET['editPostId'] == NULL) {
+        echo "<script>window.location = 'postlist.php';</script>";
+    }else{
+        $editPostId = $_GET['editPostId'];
+    }
+?>
 
         <div class="grid_10">
 		
             <div class="box round first grid">
-                <h2>Add New Post</h2>
+                <h2>Update Post</h2>
 <?php
      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          $title = mysqli_real_escape_string($db->link, $_POST['title']);
@@ -22,35 +29,70 @@
         $file_ext = strtolower(end($div));
         $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
         $uploaded_image = "upload/".$unique_image;
-        if ($title == "" || $cat == "" || $body == "" || $tags == "" || $author == "" || $file_name == "") {
+        if ($title == "" || $cat == "" || $body == "" || $tags == "" || $author == "") {
             echo "<span class='error'>Field must not be empty!!..</span>";
-        }elseif ($file_size > 1048567) 
-        {
-            echo "<span class='error'>Image size should be less then 1 MB!</span>";
-        }
-        elseif (in_array($file_ext, $permited) === false) 
-        {
-            echo "<span class='error'>You can uploads only:-".implode(',', $permited)."</span>";        
-        }
-        else
-        {
-            move_uploaded_file($file_temp, $uploaded_image);
-            $query = "INSERT INTO tbl_post(cat, title, body, image, author, tags) VALUES('$cat', '$title', '$body', '$uploaded_image', '$author', '$tags')";
-            $inserted_rows = $db->insert($query);
-            if ($inserted_rows) 
+        }else{
+
+
+
+        if (!empty($file_name)) {
+            if ($file_size > 1048567) 
             {
-                echo "<span class='success'> Data Inserted Successfully.</span>";
+                echo "<span class='error'>Image size should be less then 1 MB!</span>";
+            }
+            elseif (in_array($file_ext, $permited) === false) 
+            {
+                echo "<span class='error'>You can uploads only:-".implode(',', $permited)."</span>";        
             }
             else
             {
-                echo "<span class='error'> Data Not Inserted !</span>";
+                move_uploaded_file($file_temp, $uploaded_image);
+                $query = "UPDATE tbl_post SET
+                cat = '$cat',
+                title = '$title',
+                body = '$body',
+                image = '$uploaded_image',
+                author = '$author',
+                tags = '$tags' WHERE id='$editPostId'";
+                $updated_rows = $db->update($query);
+                if ($updated_rows) 
+                {
+                    echo "<span class='success'> Data Updated Successfully.</span>";
+                }
+                else
+                {
+                    echo "<span class='error'> Data Not Updated !</span>";
+                }
+            }            
+        }else{
+            $query = "UPDATE tbl_post SET
+                cat = '$cat',
+                title = '$title',
+                body = '$body',
+                author = '$author',
+                tags = '$tags' WHERE id='$editPostId'";
+            $updated_rows = $db->update($query);
+            if ($updated_rows)
+            {
+                echo "<span class='success'> Data Updated Successfully.</span>";
+            }
+            else
+            {
+                echo "<span class='error'> Data Not Updated !</span>";
             }
         }
+      }
     }
 
 ?>
-                <div class="block">               
-                 <form action="addpost.php" method="post" enctype="multipart/form-data">
+                <div class="block">
+<?php
+    $query = "SELECT * FROM tbl_post WHERE id='$editPostId' ORDER by id desc";
+    $getpost = $db->select($query);
+    if ($getpost) {
+        while ($postResult = $getpost->fetch_assoc()) {
+?>               
+                 <form action="" method="post" enctype="multipart/form-data">
                     <table class="form">
                        
                         <tr>
@@ -58,7 +100,7 @@
                                 <label>Title</label>
                             </td>
                             <td>
-                                <input type="text" name="title" placeholder="Enter Post Title..." class="medium" />
+                                <input type="text" name="title" value="<?php echo $postResult['title']; ?>" class="medium" />
                             </td>
                         </tr>
                      
@@ -75,7 +117,15 @@
                                     if ($Category) {
                                         while ($result = $Category->fetch_assoc()) {
                                     ?>
-                                    <option value="<?php echo $result['id']; ?>"><?php echo $result['name']; ?></option>
+                                    <option 
+                                    <?php
+                                        if ($postResult['cat'] == $result['id']) {
+                                    ?>
+                                            selected="selected";
+                                    <?php
+                                        }
+                                    ?>
+                                    value="<?php echo $result['id']; ?>"><?php echo $result['name']; ?></option>
                                     <?php
                                        }
                                     }
@@ -96,6 +146,7 @@
                                 <label>Upload Image</label>
                             </td>
                             <td>
+                                <img src="<?php echo $postResult['image']; ?>" height="80px" width="200px"><br>
                                 <input type="file" name="image" />
                             </td>
                         </tr>
@@ -104,7 +155,9 @@
                                 <label>Content</label>
                             </td>
                             <td>
-                                <textarea class="tinymce" name="body"></textarea>
+                                <textarea class="tinymce" name="body">
+                                    <?php echo $postResult['body']; ?>
+                                </textarea>
                             </td>
                         </tr>
                         <tr>
@@ -112,7 +165,7 @@
                                 <label>Tags</label>
                             </td>
                             <td>
-                                <input type="text" name="tags" placeholder="Enter Tags..." class="medium" />
+                                <input type="text" name="tags" value="<?php echo $postResult['tags']; ?>" class="medium" />
                             </td>
                         </tr>
                         <tr>
@@ -120,7 +173,7 @@
                                 <label>Author</label>
                             </td>
                             <td>
-                                <input type="text" name="author" placeholder="Enter Author Name..." class="medium" />
+                                <input type="text" name="author" value="<?php echo $postResult['author']; ?>" class="medium" />
                             </td>
                         </tr>
 						<tr>
@@ -131,6 +184,10 @@
                         </tr>
                     </table>
                     </form>
+<?php
+            }
+    }
+?>
                 </div>
             </div>
         </div>

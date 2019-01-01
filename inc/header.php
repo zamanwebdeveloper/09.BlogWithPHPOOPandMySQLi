@@ -8,10 +8,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Zaman Web Developer</title>
+<?php
+	if (isset($_GET['pageid'])) {
+		$pagetitleid = $_GET['pageid'];
+		$query = "SELECT * FROM tbl_page WHERE id='$pagetitleid'";
+        $pages = $db->select($query);
+            if ($pages) {
+                while ($result = $pages->fetch_assoc()) {?>
+                <title><?php echo $result['name'];?>-<?php echo TITLE;?></title>
+            <?php } } }elseif (isset($_GET['id'])) {
+			$postid = $_GET['id'];
+			$query = "SELECT * FROM tbl_post WHERE id='$postid'";
+        	$posts = $db->select($query);
+            if ($posts) {
+                while ($result = $posts->fetch_assoc()) {?>
+                <title><?php echo $result['title'];?>-<?php echo TITLE;?></title>
+            <?php } } }
+            else{?>
+            	<title><?php echo $fm->title();?>-<?php echo TITLE;?></title>
+            <?php	}?>
+
 	<meta name="language" content="English">
 	<meta name="description" content="It is a website about education">
-	<meta name="keywords" content="blog,cms blog">
+	<?php
+		if (isset($_GET['id'])) {
+			$keywordsid = $_GET['id'];
+			$query = "SELECT * FROM tbl_post WHERE id='$keywordsid'";
+        	$keywordsid = $db->select($query);
+        	if ($keywordsid) {
+        		while ($result = $keywordsid->fetch_assoc()) {
+    ?>
+    <meta name="keywords" content="<?php echo $result['tags'];?>">
+    <?php } } }else{?>
+	<meta name="keywords" content="<?php echo KEYWORDS;?>">
+    <?php } ?>
+
 	<meta name="author" content="Delowar">
 	<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">	
 	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
@@ -46,17 +77,35 @@ $(window).load(function() {
 	<div class="headersection templete clear">
 		<a href="index.php">
 			<div class="logo">
-				<img src="images/logo.png" alt="Logo"/>
-				<h2>Zaman Web Developer</h2>
-				<p>I Learned HTML. CSS, JavaScript, Bootstrap, PHP, Object Oriented PHP, Laravel PHP Framework</p>
+<?php
+                    $query = "SELECT * FROM title_slogan WHERE id='1'";
+                    $blog_title = $db->select($query);
+                    if ($blog_title) {
+                        while ($result = $blog_title->fetch_assoc()) {
+?>
+
+				<img src="zaman/<?php echo $result['logo'];?>" alt="Logo"/>
+				<h2><?php echo $result['title'];?></h2>
+				<p><?php echo $result['slogan'];?></p>
+<?php
+		}
+	}
+?>
 			</div>
 		</a>
 		<div class="social clear">
 			<div class="icon clear">
-				<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-				<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-				<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-				<a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+<?php
+                    $query = "SELECT * FROM tbl_social WHERE id='1'";
+                    $socialmedia = $db->select($query);
+                    if ($socialmedia) {
+                        while ($result = $socialmedia->fetch_assoc()) {
+?>
+				<a href="<?php echo $result['fb'];?>" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="<?php echo $result['tw'];?>" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="<?php echo $result['ln'];?>" target="_blank"><i class="fa fa-linkedin"></i></a>
+				<a href="<?php echo $result['gp'];?>" target="_blank"><i class="fa fa-google-plus"></i></a>
+<?php } }?>
 			</div>
 			<div class="searchbtn clear">
 			<form action="search.php" method="get">
@@ -67,9 +116,26 @@ $(window).load(function() {
 		</div>
 	</div>
 <div class="navsection templete">
+<?php
+    $path = $_SERVER['SCRIPT_FILENAME'];
+    $currentpage = basename($path, '.php');
+?>
 	<ul>
-		<li><a id="active" href="index.php">Home</a></li>
-		<li><a href="about.php">About</a></li>	
-		<li><a href="contact.php">Contact</a></li>
+		<li><a <?php if ($currentpage == 'index') {echo 'id="active"';}?> href="index.php">Home</a></li>
+<?php
+            $query = "SELECT * FROM tbl_page";
+            $pages = $db->select($query);
+            if ($pages) {
+                while ($result = $pages->fetch_assoc()) {
+?>
+        <li><a
+        <?php
+        	if (isset($_GET['pageid']) && $_GET['pageid'] == $result['id'] ) {
+        		echo 'id="active"';
+        	}
+       	?>
+        href="page.php?pageid=<?php echo $result['id']; ?>"><?php echo $result['name']; ?></a></li>
+<?php } }?>
+		<li><a <?php if ($currentpage == 'contact') {echo 'id="active"';}?> href="contact.php">Contact</a></li>
 	</ul>
 </div>

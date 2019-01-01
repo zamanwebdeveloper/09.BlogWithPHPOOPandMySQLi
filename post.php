@@ -19,7 +19,7 @@
 ?>
 				<h2><?php echo $result['title'];?></h2>
                     <h4><?php echo $fm->formateDate($result['date']);?>, By <a href="#"><?php echo $result['author'];?></a></h4>
-                    <img src="admin/upload/<?php echo $result['image'];?>" alt="post image"/>
+                    <img src="zaman/<?php echo $result['image'];?>" alt="post image"/>
                     <?php echo $result['body'];?>
 				
 				<div class="relatedpost clear">
@@ -32,7 +32,7 @@
                             while ($resultReleted = $postReleted->fetch_assoc()) {
                                 ?>
                                 <a href="post.php?id=<?php echo $resultReleted['id'];?>">
-                                    <img src="admin/upload/<?php echo $resultReleted['image'];?>" alt="post image"/>
+                                    <img src="zaman/<?php echo $resultReleted['image'];?>" alt="post image"/>
                                 </a>
                                 <?php
                             }
@@ -41,10 +41,7 @@
                         }
                      ?>
 				</div>
-                <?php } ?>
-                <?php  }else{ header("Location: 404.php");
-                	}
-                ?>
+                <?php } }else{ header("Location: 404.php"); } ?>
 
 	</div>
 
