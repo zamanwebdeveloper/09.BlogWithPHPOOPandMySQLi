@@ -3,7 +3,6 @@
 <?php
     if (!isset($_GET['catid']) || $_GET['catid'] == NULL) {
         echo "<script>window.location = 'catlist.php';</script>";
-        //header("Location:catlist.php");
     }else{
         $id = $_GET['catid'];
     }

@@ -1,5 +1,10 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebarAdmin.php';?>
+<?php
+    if (!Session::get('userRole') == '0') {
+        echo "<script>window.location = 'index.php';</script>";
+    }
+?>
 
         <div class="grid_10">
 		

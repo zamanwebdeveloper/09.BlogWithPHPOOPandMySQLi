@@ -101,8 +101,16 @@
                                 echo "(0)";
                             }
                         ?>
-                    </span></a></li>
+                    </span></a>
+                </li>
+                <?php
+                    if (Session::get('userRole') == '0') {
+                ?>
                 <li class="ic-charts"><a href="adduser.php"><span>Add User</span></a></li>
+
+                <?php
+                    }
+                ?>
                 <li class="ic-charts"><a href="userlist.php"><span>User List</span></a></li>
                 <li class="ic-charts"><a href="postlist.php"><span>Visit Website</span></a></li>
             </ul>

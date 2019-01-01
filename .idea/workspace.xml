@@ -3,30 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f635f3d-65e8-4a09-b5ec-0b8fcb4dd4af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/Format.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/Format.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/addpost.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/addpost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/catlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/catlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/copyright.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/copyright.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/editcat.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/editcat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/inbox.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/inbox.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/inc/sidebarAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/inc/sidebarAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/postlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/postlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/social.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/social.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/titleslogan.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/titleslogan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/upload/post1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zaman/upload/post2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zaman/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/zaman/profile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,19 +14,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zaman/replaymsg.php">
+        <entry file="file://$PROJECT_DIR$/zaman/inbox.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+            <state relative-caret-position="665">
+              <caret line="101" column="99" selection-start-line="101" selection-start-column="99" selection-end-line="101" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zaman/userlist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="913">
+              <caret line="64" column="29" lean-forward="true" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zaman/viewmsg.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zaman/inbox.php">
+        <entry file="file://$PROJECT_DIR$/zaman/viewuser.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="444">
-              <caret line="88" column="99" selection-start-line="88" selection-start-column="99" selection-end-line="88" selection-end-column="99" />
+              <caret line="68" column="76" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -57,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zaman/catlist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="714">
               <caret line="42" column="47" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="94" />
             </state>
           </provider>
@@ -109,10 +104,12 @@
         <option value="$PROJECT_DIR$/zaman/viewmsg.php" />
         <option value="$PROJECT_DIR$/zaman/replaymsg.php" />
         <option value="$PROJECT_DIR$/zaman/inbox.php" />
+        <option value="$PROJECT_DIR$/zaman/userlist.php" />
+        <option value="$PROJECT_DIR$/zaman/viewuser.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -193,17 +190,18 @@
       <workItem from="1546250303794" duration="6129000" />
       <workItem from="1546271400891" duration="4544000" />
       <workItem from="1546323711513" duration="2698000" />
+      <workItem from="1546351507486" duration="1894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61291000" />
+    <option name="totallyTimeSpent" value="63185000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19667171" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19969743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -352,13 +350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zaman/viewmsg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="62" column="78" selection-start-line="62" selection-start-column="78" selection-end-line="62" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zaman/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -373,6 +364,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zaman/catlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="47" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zaman/addpost.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -380,17 +378,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zaman/catlist.php">
+    <entry file="file://$PROJECT_DIR$/zaman/inbox.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="42" column="47" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="94" />
+        <state relative-caret-position="665">
+          <caret line="101" column="99" selection-start-line="101" selection-start-column="99" selection-end-line="101" selection-end-column="99" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zaman/inbox.php">
+    <entry file="file://$PROJECT_DIR$/zaman/userlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="913">
+          <caret line="64" column="29" lean-forward="true" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zaman/viewmsg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zaman/viewuser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
-          <caret line="88" column="99" selection-start-line="88" selection-start-column="99" selection-end-line="88" selection-end-column="99" />
+          <caret line="68" column="76" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="76" />
         </state>
       </provider>
     </entry>
