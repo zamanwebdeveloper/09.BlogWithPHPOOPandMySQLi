@@ -19,6 +19,7 @@
          $body = mysqli_real_escape_string($db->link, $_POST['body']);
          $tags = mysqli_real_escape_string($db->link, $_POST['tags']);
          $author = mysqli_real_escape_string($db->link, $_POST['author']);
+         $userId = mysqli_real_escape_string($db->link, $_POST['userid']);
 
         $permited = array('jpg', 'jpeg', 'png', 'gif');
         $file_name = $_FILES['image']['name'];
@@ -53,7 +54,9 @@
                 body = '$body',
                 image = '$uploaded_image',
                 author = '$author',
-                tags = '$tags' WHERE id='$editPostId'";
+                tags = '$tags',
+                userid = '$userId'
+                WHERE id='$editPostId'";
                 $updated_rows = $db->update($query);
                 if ($updated_rows) 
                 {
@@ -70,7 +73,9 @@
                 title = '$title',
                 body = '$body',
                 author = '$author',
-                tags = '$tags' WHERE id='$editPostId'";
+                tags = '$tags',
+                userid = '$userId'
+                WHERE id='$editPostId'";
             $updated_rows = $db->update($query);
             if ($updated_rows)
             {
@@ -174,12 +179,14 @@
                             </td>
                             <td>
                                 <input type="text" name="author" value="<?php echo $postResult['author']; ?>" class="medium" />
+                                <input type="hidden" name="userid" value="<?php echo Session::get('userId');?>" class="medium" />
+
                             </td>
                         </tr>
 						<tr>
                             <td></td>
                             <td>
-                                <input type="submit" name="submit" Value="Save" />
+                                <input type="submit" name="submit" Value="Update" />
                             </td>
                         </tr>
                     </table>

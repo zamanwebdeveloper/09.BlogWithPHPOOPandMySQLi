@@ -32,6 +32,7 @@
 				if ($result != false) {
 					$value = mysqli_fetch_array($result);
 					$row = mysqli_num_rows($result);
+					$value = $result->fetch_assoc();
 					if ($row > 0) {
 						Session::set("login", true);
 						Session::set("username", $value['username']);
@@ -60,7 +61,10 @@
 			</div>
 		</form><!-- form -->
 		<div class="button">
-			<a href="#">Training with live project</a>
+			<a href="forgetpass.php">Forgot Password</a>
+		</div><!-- button -->
+		<div class="button">
+			<a href="#">Training with Zaman's project</a>
 		</div><!-- button -->
 	</section><!-- content -->
 </div><!-- container -->

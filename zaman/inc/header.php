@@ -112,7 +112,7 @@
                     }
                 ?>
                 <li class="ic-charts"><a href="userlist.php"><span>User List</span></a></li>
-                <li class="ic-charts"><a href="postlist.php"><span>Visit Website</span></a></li>
+<!--                 <li class="ic-charts"><a href="postlist.php"><span>Visit Website</span></a></li> -->
             </ul>
         </div>
         <div class="clear">
