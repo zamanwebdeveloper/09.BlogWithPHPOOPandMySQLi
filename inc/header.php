@@ -43,7 +43,7 @@
 	<meta name="keywords" content="<?php echo KEYWORDS;?>">
     <?php } ?>
 
-	<meta name="author" content="Delowar">
+	<meta name="author" content="zaman">
 	<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.css">	
 	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="style.css">

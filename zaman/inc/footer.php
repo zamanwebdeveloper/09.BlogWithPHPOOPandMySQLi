@@ -6,7 +6,7 @@
     </div>
     <div id="site_info">
         <p>
-         &copy; Copyright <a href="http://zamanwebdeveloper.com">Training with Zaman's project</a>. All Rights Reserved.
+         &copy; Copyright <a href="http://zamanwebdeveloper.com">Zaman Web Development Ltd.</a>. All Rights Reserved.
         </p>
     </div>
 </body>

@@ -43,18 +43,18 @@
                     	WHERE id='$userid'";
                     	$updated_row = $db->update($updatequery);
 
-                    	$to = '$email';
-						$headers[] = 'To: $email';
-						$headers[] = 'From: zamanwebdeveloper@gmail.com';
-						$headers[] = 'MIME-Version: 1.0';
-						$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+                    	$to = "$email";
+                    	$from = "zamancsediue44@gmail.com";
+                    	$headers = "From: $from\n";
+						$headers.= 'MIME-Version: 1.0'."\r\n";
+						$headers.= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
 
-					  $subject = "Your Password";
-					  $message = "Your Username is ".$username." And Password is ".$newpass." Please visit website to login";
-                    $sendmail = mail($to, $subject, $message, implode("\r\n", $headers));
+						$subject = "Your Password";
+						$message = "Your Username is ".$username." And Password is ".$newpass." Please visit website to login";
+                    $sendmail = mail($to, $subject, $message, $headers);
 
                     if ($sendmail) {
-						echo "<span style='color:green; font-size:18px;'>Please check your email for new password</span>";
+						echo "<span style='color:green; font-size:18px;'>Please check your email for new password Or $message</span>";
                     }else{
                     	echo "<span style='color:red; font-size:18px;'>Email not sent!.</span>";
                     }
@@ -79,7 +79,7 @@
 			<a href="login.php">Login</a>
 		</div><!-- button -->
 		<div class="button">
-			<a href="#">Training with Zaman's project</a>
+			<a href="#">Zaman Web Developer</a>
 		</div><!-- button -->
 	</section><!-- content -->
 </div><!-- container -->

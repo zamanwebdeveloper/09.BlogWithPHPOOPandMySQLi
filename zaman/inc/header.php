@@ -60,8 +60,8 @@
                     <img src="img/livelogo.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>Training with Zaman's project</h1>
-					<p>www.zamanwebdeveloper.com</p>
+					<h1>Zaman Web Developer</h1>
+					<p><a href="http://zamanwebdeveloper.com/" target="_blank">www.zamanwebdeveloper.com</a></p>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">
